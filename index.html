@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>EDM_WEB</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            @keyframes gradientBG {
+                0% {
+                    background: linear-gradient(-45deg, #000000, #000066, #000000);
+                }
+                50% {
+                    background: linear-gradient(45deg, #000000, #800000, #000000);
+                }
+                100% {
+                    background: linear-gradient(-45deg, #000000, #000066, #000000);
+                }
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-height: 100vh;
+                color: #fff;
+                animation: gradientBG 18s ease-in-out infinite;
+                background-size: 200% 200%;
+            }
+
+            nav {
+                width: 100%;
+                padding: 1rem;
+            }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+            }
+
+            nav a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            section {
+                width: 80%;
+                max-width: 1200px;
+                padding: 2rem;
+                margin: 1rem 0;
+                text-align: center;
+                border: 1px solid #333;
+                border-radius: 8px;
+                display: none; /* Hide sections by default */
+            }
+
+            section.active {
+                display: block; /* Show active section */
+            }
+
+            footer {
+                width: 100%;
+                padding: 1rem;
+                text-align: center;
+                margin-top: auto;
+            }
+
+            .video-container {
+                margin-top: 1rem;
+                display: flex;
+                justify-content: center;
+            }
+
+            @media (max-width: 768px) {
+                section {
+                    width: 90%;
+                    padding: 1rem;
+                }
+
+                nav ul {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <h1>Welcome to EDM_WEB</h1>
+        <p>This is a simple HTML template for EDM_WEB.</p>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <section id="home">
+            <h2>Home</h2>
+            <p>This is the home section of the EDM_WEB.</p>
+            <div class="video-container">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/9iM54EozzRU" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+        <section id="about">
+            <h2>About</h2>
+            <p>This section contains information about EDM_WEB.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>This section contains contact information for EDM_WEB.</p>
+        </section>
+        <footer>
+            <p>&copy; EDM_WEB. NetCinematics llc.</p>
+        </footer>
+        <script src="" async defer></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Show home section by default
+                document.getElementById('home').classList.add('active');
+
+                // Add click handlers to nav links
+                document.querySelectorAll('nav a').forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        // Hide all sections
+                        document.querySelectorAll('section').forEach(section => {
+                            section.classList.remove('active');
+                        });
+                        
+                        // Show clicked section
+                        const sectionId = this.getAttribute('href').substring(1);
+                        document.getElementById(sectionId).classList.add('active');
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
