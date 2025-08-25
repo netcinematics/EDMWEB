@@ -260,25 +260,25 @@
         <script src="" async defer></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                // Show PROMOZ section by default
-                document.getElementById('PROMOZ').classList.add('active');
+    // Change default section from PROMOZ to VIDEOZ
+    document.getElementById('VIDEOZ').classList.add('active');
 
-                // Add click handlers to nav links
-                document.querySelectorAll('nav a').forEach(link => {
-                    link.addEventListener('click', function(e) {
-                        e.preventDefault();
-                        
-                        // Hide all sections
-                        document.querySelectorAll('section').forEach(section => {
-                            section.classList.remove('active');
-                        });
-                        
-                        // Show clicked section
-                        const sectionId = this.getAttribute('href').substring(1);
-                        document.getElementById(sectionId).classList.add('active');
-                    });
-                });
+    // Add click handlers to nav links
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Hide all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
             });
+            
+            // Show clicked section
+            const sectionId = this.getAttribute('href').substring(1);
+            document.getElementById(sectionId).classList.add('active');
+        });
+    });
+});
         </script>
         <!-- <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://netcinematics.github.io/EDMWEB/"  -->
         <img src="./images/QRCODE.png" 
