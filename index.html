@@ -134,6 +134,27 @@
         box-shadow: 0 0 15px rgba(255, 165, 0, 0.3);
         transition: transform 0.3s ease;
     }
+    .qr-code {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 100px;
+        height: 100px;
+        background: white;
+        padding: 5px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        z-index: 1000;
+    }
+
+    @media (max-width: 768px) {
+        .qr-code {
+            width: 80px;
+            height: 80px;
+            top: 88px;
+            right: 10px;
+        }
+    }
         </style>
     </head>
     <body>
@@ -215,6 +236,11 @@
         <section id="VIDEOZ" style="box-shadow: -2px 1px 6px 1px steelblue;">
             <!-- <h2>VIDEOZ</h2> -->
             <p>Check these AMAZING AI Music Videoz!</p>
+            <h2>AnimalHOUSE | AI Video | 002</h2>
+            <div class="video-container">
+                <iframe width="1794" height="1009" src="https://www.youtube.com/embed/kspS9NO-RwM" title="AnimalHOUSE | AI Video | 002" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <h2>CYBERCITY | AI Video | 001</h2>
             <div class="video-container">
                 <iframe 
                     width="560" 
@@ -225,8 +251,8 @@
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                     allowfullscreen>
                 </iframe>
-            </div>
-
+            </div>                        
+            
         </section>
         <footer>
             <p>&copy; EDMWEB, GenAI, NetCinematics llc.</p>
@@ -254,5 +280,9 @@
                 });
             });
         </script>
+        <!-- <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://netcinematics.github.io/EDMWEB/"  -->
+        <img src="./images/QRCODE.png" 
+     alt="QR Code to EDMWEB" 
+     class="qr-code">
     </body>
 </html>
